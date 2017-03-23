@@ -5,10 +5,9 @@ Gem::Specification.new do |s|
   s.version = '0.3.0'
   s.summary = 'Integrate Kiik with your Ruby app'
   s.description = "KiiK's official gem that helps you to integrate with our services. See https://docs.kiik.com.br for details."
-  s.authors = ['Julien Lucca', 'Esdras Eduardo', 'Luis Daher']
+  s.authors = ['Julien Lucca', 'Esdras Eduardo']
   s.email = ['lucca@kiik.com',
-             'esdras.rosa@kiik.com',
-             'luisotaviodaher@gmail.com']
+             'esdras.rosa@kiik.com']
   s.homepage = 'http://docs.kiik.com'
   s.license = 'MIT'
 
