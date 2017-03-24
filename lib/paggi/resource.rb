@@ -11,7 +11,7 @@ module Paggi
       end
 
       def url
-        "#{Paggi.configuration.host}api/#{Paggi.configuration.version}/#{Paggi::Util.underscore(class_name)}s"
+        "#{Paggi.configuration.host}/api/#{Paggi.configuration.version}/#{Paggi::Util.underscore(class_name)}s"
       end
 
       def opts(headers={})
