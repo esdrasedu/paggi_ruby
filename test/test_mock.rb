@@ -1,14 +1,14 @@
-module Kiik
+module Paggi
   module TestMock
     def request(url, params = {}, method = :any)
-      host = Kiik.configuration.host.gsub(%r{^https:\/\/}, '')
+      host = Paggi.configuration.host.gsub(%r{^https:\/\/}, '')
                  .gsub(%r{^http:\/\/}, '')
+      version = Paggi.configuration.version
       headers = {
-        accept_version: Kiik.configuration.version,
         content_type: 'application/json'
       }
-
-      stub_request(method, "#{Kiik.configuration.api_key}:@#{host}/#{url}")
+      uri = Paggi.configuration.api_key + ":@#{host}api/#{version}/#{url}"
+      stub_request(method, uri)
         .with(headers: headers)
         .with(body: params)
     end

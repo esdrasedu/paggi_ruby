@@ -1,4 +1,4 @@
-module Kiik
+module Paggi
   class Resource
     include HTTParty
 
@@ -11,22 +11,19 @@ module Kiik
       end
 
       def url
-        "#{Kiik.configuration.host}/#{Kiik::Util.underscore(class_name)}s"
+        "#{Paggi.configuration.host}api/#{Paggi.configuration.version}/#{Paggi::Util.underscore(class_name)}s"
       end
 
       def opts(headers={})
         {
-          basic_auth: {username: Kiik.configuration.api_key, password: ''},
-          headers: {
-            "Accept-Version" => Kiik.configuration.version,
-            "Content-Type" => 'application/json'
-          }.merge(headers)
+          basic_auth: {username: Paggi.configuration.api_key, password: ''},
+          headers: headers.merge({"Content-Type" => 'application/json'})
         }
       end
 
       def build(data, error = nil)
         if data['result'] && data['total']
-          instance = Kiik::Paginated.new()
+          instance = Paggi::Paginated.new()
           instance.result = data['result'].map { |element| self.new(element) }
           instance.total = data['total']
         else
@@ -56,7 +53,7 @@ module Kiik
           build(JSON.parse(response.body))
         when 422, 404
           result = JSON.parse(response.body)
-          KiikError.new(result)
+          PaggiError.new(result)
         else
           raise StandardError.new(response.message)
         end

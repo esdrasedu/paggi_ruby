@@ -1,4 +1,4 @@
-module Kiik
+module Paggi
   module Rest
     module GetAll
       class << self
@@ -12,7 +12,7 @@ module Kiik
         result = self.class.get_all(self.to_json)
         raise result if result.instance_of? StandardError
 
-        if result.instance_of? KiikError
+        if result.instance_of? PaggiError
           self.errors = result.errors
           return false
         end
@@ -26,7 +26,7 @@ module Kiik
         def get_all!(params={}, header={})
           begin
             get_all(params, header)
-          rescue KiikError => e
+          rescue PaggiError => e
             build(params, e)
           rescue StandardError => e
             e

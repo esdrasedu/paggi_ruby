@@ -1,12 +1,12 @@
-module Kiik
-  class KiikError < StandardError
-    attr_reader :errors
+module Paggi
+  class PaggiError < StandardError
+    attr_accessor :errors
     def initialize(body = nil)
-      @errors = body.nil? || body["errors"].nil? ? [] : body["errors"].map{ |error| symbolize_keys(error) }
+      @errors = body.nil? || body['errors'].nil? ? [] : body['errors'].map{ |error| symbolize_keys(error) }
     end
 
     def to_s
-      @errors.map{ |e| e[:param].nil? ? e[:message] : "#{e[:param]}: #{e[:message]}" }.join(", ")
+      @errors.map{ |e| e[:param].nil? ? e[:message] : "#{e[:param]}: #{e[:message]}" }.join(', ')
     end
 
     private

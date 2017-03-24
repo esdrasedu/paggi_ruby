@@ -1,7 +1,7 @@
-module Kiik
+module Paggi
   class Customer < Resource
-    include Kiik::Rest::Create
-    include Kiik::Rest::Update
+    include Paggi::Rest::Create
+    include Paggi::Rest::Update
 
     attr_accessor :phone, :name, :document, :email, :metadata, :description, :cards
 

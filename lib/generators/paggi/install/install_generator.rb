@@ -1,8 +1,8 @@
-module Kiik
+module Paggi
   module Generators
     # Configuration files generator
     class InstallGenerator < ::Rails::Generators::Base
-      desc 'Copy kiik.yml file to the application config directory.'
+      desc 'Copy paggi.yml file to the application config directory.'
 
       def self.source_root
         @source_root ||= File.expand_path(
@@ -11,8 +11,8 @@ module Kiik
       end
 
       def copy_config_file
-        template 'config/kiik.yml'
-        template 'config/initializers/kiik.rb'
+        template 'config/paggi.yml'
+        template 'config/initializers/paggi.rb'
       end
     end
   end

@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency('webmock', '~> 1.21')
   s.add_dependency('httparty', '>= 0.13.7')
 
-  s.files = `git ls-files`.split('\n')
-  s.test_files    = `git ls-files -- test/*`.split('\n')
+  s.files = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- test/*`.split("\n")
   s.require_paths = ['lib']
 end

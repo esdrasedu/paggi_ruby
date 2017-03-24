@@ -1,7 +1,7 @@
-module Kiik
+module Paggi
   class Card < Resource
-    include Kiik::Rest::Create
-    include Kiik::Rest::Update
+    include Paggi::Rest::Create
+    include Paggi::Rest::Update
 
     attr_accessor :customer_id, :name, :number, :month, :year, :cvc, :card_alias, :cvc_check, :default
 

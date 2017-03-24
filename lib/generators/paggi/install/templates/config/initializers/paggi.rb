@@ -1,8 +1,8 @@
-KIIK_ENV = ENV['KIIK_ENV'] || 'development'
-KIIK_CONFIG = YAML.load_file("#{Rails.root}/config/kiik.yml")[KIIK_ENV]
+PAGGI_ENV = ENV['PAGGI_ENV'] || ENV['RAILS_ENV'] || 'development'
+PAGGI_CONFIG = YAML.load_file("#{Rails.root}/config/kiik.yml")[PAGGI_ENV]
 
-Kiik.setup do |config|
-  config.host = KIIK_CONFIG['host']
-  config.api_key = KIIK_CONFIG['api_key']
-  config.version = KIIK_CONFIG['version']
+Paggi.setup do |config|
+  config.host = PAGGI_CONFIG['host']
+  config.api_key = PAGGI_CONFIG['api_key']
+  config.version = PAGGI_CONFIG['version']
 end

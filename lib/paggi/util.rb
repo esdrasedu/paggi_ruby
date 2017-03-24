@@ -1,4 +1,4 @@
-module Kiik
+module Paggi
   module Util
     class << self
       def underscore(camel_cased_word)

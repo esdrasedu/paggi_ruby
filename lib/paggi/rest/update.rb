@@ -1,4 +1,4 @@
-module Kiik
+module Paggi
   module Rest
     module Update
       class << self
@@ -13,7 +13,7 @@ module Kiik
         result = self.class.update(self.to_json)
         raise result if result.instance_of? StandardError
 
-        if result.instance_of? KiikError
+        if result.instance_of? PaggiError
           self.errors = result.errors
           return false
         end
@@ -27,7 +27,7 @@ module Kiik
         def update!(params={id: 0}, header={})
           begin
             update(params, header)
-          rescue KiikError => e
+          rescue PaggiError => e
             build(params, e)
           rescue StandardError => e
             raise e

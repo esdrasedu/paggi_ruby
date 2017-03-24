@@ -1,26 +1,26 @@
 require 'yaml'
 require 'httparty'
 
-require 'kiik/rest/create'
-require 'kiik/rest/update'
-require 'kiik/rest/get_all'
-require 'kiik/util'
-require 'kiik/resource'
-require 'kiik/card'
-require 'kiik/customer'
-require 'kiik/charge'
-require 'kiik/payment'
-require 'kiik/error'
-require 'kiik/paginated'
-require 'kiik/configuration'
+require 'paggi/rest/create'
+require 'paggi/rest/update'
+require 'paggi/rest/get_all'
+require 'paggi/util'
+require 'paggi/resource'
+require 'paggi/card'
+require 'paggi/customer'
+require 'paggi/charge'
+require 'paggi/payment'
+require 'paggi/error'
+require 'paggi/paginated'
+require 'paggi/configuration'
 
-module Kiik
+module Paggi
   class << self
     attr_accessor :configuration
-  end
 
-  def self.setup
-    self.configuration ||= Kiik::Configuration.new
-    yield configuration
+    def setup
+      self.configuration ||= Paggi::Configuration.new
+      yield configuration
+    end
   end
 end
