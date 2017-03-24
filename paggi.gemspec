@@ -1,14 +1,13 @@
 $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
 Gem::Specification.new do |s|
-  s.name = 'kiik'
-  s.version = '0.3.0'
-  s.summary = 'Integrate Kiik with your Ruby app'
-  s.description = "KiiK's official gem that helps you to integrate with our services. See https://docs.kiik.com.br for details."
-  s.authors = ['Julien Lucca', 'Esdras Eduardo']
-  s.email = ['lucca@kiik.com',
-             'esdras.rosa@kiik.com']
-  s.homepage = 'http://docs.kiik.com'
+  s.name = 'paggi'
+  s.version = '0.1.0'
+  s.summary = 'Integrate Paggi with your Ruby app'
+  s.description = 'Paggi\'s official gem that helps you to integrate with our services. See https://docs.paggi.com for details.'
+  s.authors = ['Esdras Eduardo', 'Flávio Vieira']
+  s.email = ['esdras.rosa@paggi.com', 'flavio.mv@paggi.com']
+  s.homepage = 'http://docs.paggi.com'
   s.license = 'MIT'
 
   s.add_development_dependency('mocha', '~> 0.13')

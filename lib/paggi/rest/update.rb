@@ -1,6 +1,6 @@
-module Kiik
+module Paggi
   module Rest
-    module GetAll
+    module Update
       class << self
 
         def included(base)
@@ -8,11 +8,12 @@ module Kiik
         end
 
       end
-      def get_all
-        result = self.class.get_all(self.to_json)
+
+      def update
+        result = self.class.update(self.to_json)
         raise result if result.instance_of? StandardError
 
-        if result.instance_of? KiikError
+        if result.instance_of? PaggiError
           self.errors = result.errors
           return false
         end
@@ -23,24 +24,23 @@ module Kiik
 
       module ClassMethods
 
-        def get_all!(params={}, header={})
+        def update!(params={id: 0}, header={})
           begin
-            get_all(params, header)
-          rescue KiikError => e
+            update(params, header)
+          rescue PaggiError => e
             build(params, e)
           rescue StandardError => e
-            e
+            raise e
           end
         end
 
-        def get_all(params={}, header={})
-
-          result = request(nil, params, :GET, header)
-
+        def update(params={id: 0}, header={})
+          result = request(params[:id], params, :PUT, header)
           raise result if result.kind_of? StandardError
           result
         end
       end
+
     end
   end
 end

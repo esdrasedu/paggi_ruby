@@ -1,6 +1,6 @@
 require File.expand_path('../../test_helper', __FILE__)
 
-module Kiik
-  class ChargeTest < Test::Unit::TestCase
+module Paggi
+  class CardTest < Test::Unit::TestCase
   end
 end

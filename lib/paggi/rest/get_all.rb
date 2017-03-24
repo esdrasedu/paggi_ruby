@@ -1,6 +1,6 @@
-module Kiik
+module Paggi
   module Rest
-    module Create
+    module GetAll
       class << self
 
         def included(base)
@@ -8,12 +8,11 @@ module Kiik
         end
 
       end
-
-      def create
-        result = self.class.create(self.to_json)
+      def get_all
+        result = self.class.get_all(self.to_json)
         raise result if result.instance_of? StandardError
 
-        if result.instance_of? KiikError
+        if result.instance_of? PaggiError
           self.errors = result.errors
           return false
         end
@@ -24,23 +23,24 @@ module Kiik
 
       module ClassMethods
 
-        def create!(params={}, header={})
+        def get_all!(params={}, header={})
           begin
-            create(params, header)
-          rescue KiikError => e
+            get_all(params, header)
+          rescue PaggiError => e
             build(params, e)
           rescue StandardError => e
             e
           end
         end
 
-        def create(params={}, header={})
-          result = request(nil, params, :POST, header)
+        def get_all(params={}, header={})
+
+          result = request(nil, params, :GET, header)
+
           raise result if result.kind_of? StandardError
           result
         end
       end
-
     end
   end
 end

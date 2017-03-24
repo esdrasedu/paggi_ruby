@@ -1,6 +1,8 @@
-# KiiK Ruby [![Build Status](https://snap-ci.com/kiik-payments/kiik_ruby/branch/master/build_image)](https://snap-ci.com/kiik-payments/kiik_ruby/branch/master) [![Inline docs](http://inch-ci.org/github/kiik-payments/kiik-ruby.svg?branch=master)](http://inch-ci.org/github/kiik-payments/kiik-ruby)
+# Paggi Ruby
+[![Build Status](https://semaphoreci.com/api/v1/kiik-payment/paggi_ruby/branches/master/badge.svg)](https://semaphoreci.com/kiik-payment/paggi_ruby)
 
-Gem for bindings with Kiik API
+
+Gem for bindings with Paggi API
 
 Requirements
 --------------
@@ -10,12 +12,12 @@ Requirements
 Installation
 --------------
 ### Gem
-   `gem install kiik`
+   `gem install paggi`
 
 ### Bundle
 ```ruby
 source 'https://rubygems.org'
-gem 'kiik'
+gem 'paggi'
 ```
 
 Tasks
@@ -27,18 +29,18 @@ Tasks
 In order to generate config files, run:
 
 ```
-rails g kiik:install
+rails g paggi:install
 ```
 
-This command will create two files: `config/initializers/kiik.rb` and
-`config/kiik.yml`, containing the default settings for the app to run.
+This command will create two files: `config/initializers/paggi.rb` and
+`config/paggi.yml`, containing the default settings for the app to run.
 
 #### Non-Rails Apps
 
 It is recommended to create a YAML configuration file and a Ruby initializer file. The initializer must be required inside the main application ruby file.
 
 ```yaml
-# kiik.yml
+# paggi.yml
 development:
   api_key:  payos_test
   host:     http://localhost:8800
@@ -54,7 +56,7 @@ production:
 ```
 
 ```ruby
-# kiik.rb
+# paggi.rb
 KIIK_ENV = ENV['KIIK_ENV'] || 'development'
 KIIK_CONFIG = YAML.load_file('./kiik.yml')[KIIK_ENV]
 
@@ -76,4 +78,4 @@ customer = Kiik::Customer.create({name: "User name", email: "user@email.com"})
 
 ### Production
 
-For production env, don't forget to set `KIIK_ENV` to `production`, that way, our gem will read the `kiik.yml` file correctly.
+For production env, don't forget to set `PAGGI_ENV` to `production`, that way, our gem will read the `paggi.yml` file correctly.

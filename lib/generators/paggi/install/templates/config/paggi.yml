@@ -1,0 +1,14 @@
+development:
+  api_key:  #APIKEY
+  host:     https://online.paggi.com
+  version:  'v4demo'
+  
+staging:
+  api_key:  #APIKEY
+  host:     https://staging-online.paggi.com
+  version:  'v4'
+
+production:
+  api_key:  #APIKEY
+  host:     https://online.paggi.com
+  version:  'v4'

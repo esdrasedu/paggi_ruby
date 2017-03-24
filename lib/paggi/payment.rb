@@ -1,13 +1,13 @@
-module Kiik
+module Paggi
   class Payment < Resource
-    include Kiik::Rest::GetAll
+    include Paggi::Rest::GetAll
 
     attr_accessor :status, :expected_compensation, :compensated_at, :amount, :amount_raw, :total
 
     class << self
       def consolidated(customer = nil, start_date = nil, end_date = nil)
         url = customer.nil? ? '' : "#{customer}/"
-        url += "consolidated"
+        url += 'consolidated'
         params = []
         params << "start_date=#{start_date.strftime('%Y-%m-%d %H:%M:%S')}" if start_date
         params << "end_date=#{end_date.strftime('%Y-%m-%d %H:%M:%S')}" if end_date
