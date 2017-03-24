@@ -13,7 +13,7 @@ class Test::Unit::TestCase
     Paggi.setup do |config|
       config.api_key = '123'
       config.version = 'v4demo'
-      config.host = 'http://online.paggi.com/'
+      config.host = 'http://online.paggi.com'
     end
   end
 end
