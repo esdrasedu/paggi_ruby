@@ -43,27 +43,27 @@ It is recommended to create a YAML configuration file and a Ruby initializer fil
 # paggi.yml
 development:
   api_key:  payos_test
-  host:     http://localhost:8800
-  version:  '0.3'
+  host:     http://localhost:4000
+  version:  'v4'
 staging:
   api_key:  B31DCE74-E768-43ED-86DA-85501612548F
-  host:     https://demo.kiik.com
-  version:  '0.3'
+  host:     https://online.paggi.com
+  version:  'v4'
 production:
   api_key:  B31DCE74-E768-43ED-86DA-85501612548F
-  host:     https://api.kiik.com
-  version:  '0.3'
+  host:     https://online.paggi.com
+  version:  'v4'
 ```
 
 ```ruby
 # paggi.rb
-KIIK_ENV = ENV['KIIK_ENV'] || 'development'
-KIIK_CONFIG = YAML.load_file('./kiik.yml')[KIIK_ENV]
+PAGGI_ENV = ENV['PAGGI_ENV'] || ENV['RAILS_ENV'] || 'development'
+PAGGI_CONFIG = YAML.load_file("#{Rails.root}/config/kiik.yml")[PAGGI_ENV]
 
-Kiik.setup do |config|
-  config.host = KIIK_CONFIG['host']
-  config.api_key = KIIK_CONFIG['api_key']
-  config.version = KIIK_CONFIG['version']
+Paggi.setup do |config|
+  config.host = PAGGI_CONFIG['host']
+  config.api_key = PAGGI_CONFIG['api_key']
+  config.version = PAGGI_CONFIG['version']
 end
 ```
 
@@ -73,7 +73,7 @@ end
 
 ```ruby
 #Create customer
-customer = Kiik::Customer.create({name: "User name", email: "user@email.com"})
+customer = Paggi::Customer.create({name: "User name", email: "user@email.com"})
 ```
 
 ### Production
