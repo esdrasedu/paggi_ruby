@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.summary = 'Integrate Paggi with your Ruby app'
   s.description = 'Paggi\'s official gem that helps you to integrate with our services. See https://docs.paggi.com for details.'
   s.authors = ['Esdras Eduardo', 'Flávio Vieira']
-  s.email = ['esdras.rosa@paggi.com', 'flavio.mv@gmail.com']
+  s.email = ['esdras.rosa@paggi.com', 'flavio.mv@paggi.com']
   s.homepage = 'http://docs.paggi.com'
   s.license = 'MIT'
 
