@@ -1,4 +1,6 @@
-# Paggi Ruby [![Build Status](https://snap-ci.com/kiik-payments/kiik_ruby/branch/master/build_image)](https://snap-ci.com/kiik-payments/kiik_ruby/branch/master) [![Inline docs](http://inch-ci.org/github/kiik-payments/kiik-ruby.svg?branch=master)](http://inch-ci.org/github/kiik-payments/kiik-ruby)
+# Paggi Ruby
+[![Build Status](https://semaphoreci.com/api/v1/kiik-payment/paggi_ruby/branches/master/badge.svg)](https://semaphoreci.com/kiik-payment/paggi_ruby)
+
 
 Gem for bindings with Paggi API
 
