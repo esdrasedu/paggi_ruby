@@ -1,19 +1,14 @@
 development:
-  api_key:  payos_test
-  host:     http://localhost:4000
+  api_key:  #APIKEY
+  host:     https://online.paggi.com
   version:  'v4demo'
   
 staging:
-  api_key:  B31DCE74-E768-43ED-86DA-85501612548F
-  host:     https://online.paggi.com
-  version:  'v4demo'
-
-test:
-  api_key:  B31DCE74-E768-43ED-86DA-85501612548F
-  host:     http://localhost:4000/
-  version:  'v4demo'
+  api_key:  #APIKEY
+  host:     https://staging-online.paggi.com
+  version:  'v4'
 
 production:
-  api_key:  B31DCE74-E768-43ED-86DA-85501612548F
+  api_key:  #APIKEY
   host:     https://online.paggi.com
   version:  'v4'
