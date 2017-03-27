@@ -7,7 +7,7 @@ module Paggi
       headers = {
         content_type: 'application/json'
       }
-      uri = Paggi.configuration.api_key + ":@#{host}api/#{version}/#{url}"
+      uri = Paggi.configuration.api_key + ":@#{host}/api/#{version}/#{url}"
       stub_request(method, uri)
         .with(headers: headers)
         .with(body: params)
