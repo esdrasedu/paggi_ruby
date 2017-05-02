@@ -3,7 +3,7 @@ $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 
 Gem::Specification.new do |s|
   s.name = 'paggi'
-  s.version = '0.1.1'
+  s.version = '0.1.2'
   s.summary = 'Integrate Paggi with your Ruby app'
   s.description = 'Paggi\'s official gem that helps you to integrate with our services. See https://docs.paggi.com for details.'
   s.authors = ['Esdras Eduardo', 'Flávio Vieira']
